@@ -1,0 +1,29 @@
+.cvc {
+    position: absolute;
+    top: 72px;
+    left: 240px;
+}
+
+.cardFront {
+    bottom: -94px;
+}
+
+.image {
+    margin-left: -46px;;
+}
+
+@media only screen and (min-width: 1440px){
+    .cardFront {
+        bottom: 0;
+    }
+
+    .image {
+        margin-left: 0;
+    }
+
+    .cvc {
+        position: absolute;
+        top: 106px;
+        left: 420px;
+    }
+}
