@@ -1,8 +1,11 @@
 import Icon from '../../../Icons';
 import Button from '../../../components/Button';
 import Section from './Section';
+import { useCardCreditContext } from '../../../context';
 
-const SectionSucess = ({ sucess, setSucess, ...props }) => {
+const SectionSucess = ({ ...props }) => {
+    const { sucess, setSucess } = useCardCreditContext();
+
     if(!sucess){
         return null;
     }

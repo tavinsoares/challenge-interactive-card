@@ -7,7 +7,9 @@ const Input = ({
     placeholder,
     containerClassName,
     hasError,
-    msgError
+    msgError,
+    name,
+    ...props
     }) => {
     const containerClasses = classnames(
         "sm:flex sm:flex-col",
@@ -20,12 +22,14 @@ const Input = ({
     )
     return(
         <div className={containerClasses}>
-            {label && <label className="text-purple-dark font-bold text-sm mb-2">{label}</label>}
+            {label && <label htmlFor={name}  className="text-purple-dark font-bold text-sm mb-2">{label}</label>}
             <input 
+                name={name}
                 className={inputClasses}
                 value={value} 
                 onChange={onChange} 
                 placeholder={placeholder}
+                {...props}
             />
             {msgError && <span className="text-red font-semibold text-xs mt-2 ">{msgError}</span>}
         </div>
