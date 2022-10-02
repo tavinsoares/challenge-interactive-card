@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'sm': "375px",
+      'sm': "320px",
       'lg': "1440px"
     },
     extend: {
@@ -26,7 +26,6 @@ module.exports = {
         dark: '#8e8593',
         'very-dark': '#21092f',
       },
-      
       red: '#ff5252',
     },
     gradientColorStops: theme => ({

@@ -8,6 +8,10 @@
     url("./fonts/SpaceGrotesk.ttf") format("truetype");
 }
 
+html {
+  letter-spacing: 2px;
+}
+
 .container {
   max-width: 375px;
   margin: 0 auto;
@@ -24,7 +28,7 @@
   }
 
   .inner-container {
-    max-width: 1200px;
+    max-width: 510px;
     margin: 0 auto;
   }  
 }

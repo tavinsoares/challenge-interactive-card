@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-import Icon from '../../Icons/';
+import Icon from '../../../Icons/';
 
 import cardFront from '../images/bg-card-front.png';
 import styles from './styles.module.css';
@@ -17,7 +17,7 @@ const CardFront = ({
         <div className={cardClasses}>
           <img className={styles.image} src={cardFront}  />
           <div className={infosContanierClasses}>
-            <Icon name="CardLogo" width={80} heig  />
+            <Icon name="CardLogo" />
             <div className="text-white sm:mt-6 lg:mt-12">
                 <span className="block lg:text-[32px]">{number}</span>
                 <div className="flex justify-between sm:mt-2">
