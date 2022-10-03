@@ -4,7 +4,7 @@ import Section from './Section';
 import { useCardCreditContext } from '../../../context';
 
 const SectionSucess = ({ ...props }) => {
-    const { sucess, changeSucess } = useCardCreditContext();
+    const { sucess, resetData } = useCardCreditContext();
 
     if(!sucess){
         return null;
@@ -16,7 +16,7 @@ const SectionSucess = ({ ...props }) => {
             <span className="block sm:text-[32px] text-purple-dark font-bold sm:mt-8">THANK YOU!</span>
             <span className="block sm:text-xl sm:mt-8">We've added your card details</span>
             <div className="w-full sm:mt-8 sm:h-14 sm:px-8">
-                <Button onClick={() => changeSucess(false)}>
+                <Button onClick={() => resetData()}>
                     Continue
                 </Button> 
             </div>

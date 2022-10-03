@@ -1,13 +1,15 @@
 import classnames from 'classnames';
 
-const Button = ({ children, onClick, className, ...props }) => {
+const Button = ({ children, onClick, className, disabled, ...props }) => {
     const buttonClasses = classnames(
-        "bg-purple-dark text-lg font-bold text-white w-full h-full text-center rounded-xl",
+        "text-lg font-bold  w-full h-full text-center rounded-xl",
+        { 'bg-grayish-violet text-purple-dark': disabled  },
+        { 'bg-purple-dark text-white': !disabled },
         className
     );
 
     return (
-        <button onClick={onClick} className={buttonClasses} {...props}>
+        <button disabled={disabled} onClick={onClick} className={buttonClasses} {...props}>
             {children}
         </button>
     )

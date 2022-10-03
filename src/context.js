@@ -18,6 +18,11 @@ export const useCardCreditContext = () => {
 
     return context;
 }
+const obj = {
+    value: '',
+    hasError: '',
+    msgError: ''
+};
 
 const reducer = (state, action) => {
     switch(action.type){
@@ -37,17 +42,23 @@ const reducer = (state, action) => {
                 ...state,
                 sucess: action.sucess
             }
+        case 'RESET':
+            return {
+                cardCredit: { 
+                    cardName: obj,
+                    cardNumber: obj,
+                    monthyValid: obj,
+                    yearValid: obj,
+                    cvc: obj
+                },
+                sucess: false,
+            }
         default:
             return {}
     }
 }
 
 export const useCardCredit = () => {
-    const obj = {
-        value: '',
-        hasError: '',
-        msgError: ''
-    };
     const [state, dispatch] = useReducer(reducer, {
         cardCredit: { 
             cardName: obj,
@@ -63,6 +74,7 @@ export const useCardCredit = () => {
 
     const setCardCredit = (key, value) => dispatch({type: 'SET_CARD_CREDIT', ...validateValue(key, value) });
     const changeSucess = (sucess) => dispatch({type: 'SUCESS', sucess: sucess});
+    const resetData = () => dispatch({type: 'RESET' });
     
     const validateValue = (key, value) => {
         switch(key){
@@ -84,6 +96,7 @@ export const useCardCredit = () => {
     return {
         cardCredit,
         sucess,
+        resetData,
         setCardCredit,
         changeSucess
     }

@@ -23,6 +23,10 @@ const SectionForm = () => {
         changeSucess(true);
     }
 
+    const hasError = cardName['hasError'] || cardNumber['hasError'] || monthyValid['hasError'] || yearValid['hasError'] || cvc['hasError'] 
+    const valuesCompleted = Object.keys(cardCredit).filter(value => cardCredit[value].value !== '');
+    const isAllComplted = Object.keys(cardCredit).length === valuesCompleted.length
+
     return (
         <Section classContainer="sm:px-4"  classInnerContainer="sm:pt-12 sm:mt-12 lg:pt-0 lg:mt-0">
             <form className="w-full" onSubmit={handlerSubmit}>
@@ -96,7 +100,7 @@ const SectionForm = () => {
                     />
                 </div>
                 <div className="w-full sm:mt-8 sm:h-14">
-                    <Button type="submit">
+                    <Button disabled={hasError || !isAllComplted} type="submit">
                         Continue
                     </Button> 
                 </div>
