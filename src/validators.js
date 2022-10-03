@@ -69,7 +69,7 @@ export const validateYearValid = (value) => {
 }
 
 const isBlank = (value, action = {}) => {
-    if(value == ""){
+    if(value === ""){
         return {
             hasError: true,
             msgError: 'Cant be blank!'

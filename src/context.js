@@ -37,6 +37,8 @@ const reducer = (state, action) => {
                 ...state,
                 sucess: action.sucess
             }
+        default:
+            return {}
     }
 }
 
@@ -74,6 +76,8 @@ export const useCardCredit = () => {
                 return { key, ...validateMonthyValid(value)}
             case 'yearValid':
                 return { key, ...validateYearValid(value)}
+            default:
+                return {}
         }
     }
 
