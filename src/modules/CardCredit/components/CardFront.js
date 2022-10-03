@@ -26,7 +26,7 @@ const CardFront = () => {
 
     return (
         <div className={cardClasses}>
-          <img className={styles.image} src={cardFront}  />
+          <img className={styles.image} src={cardFront} alt="" />
           <div className={infosContanierClasses}>
             <Icon name="CardLogo" />
             <div className="text-white sm:mt-6 lg:mt-12">
