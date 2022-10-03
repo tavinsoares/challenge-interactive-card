@@ -12,12 +12,12 @@ const mockCredit = {
     valid: '00/00'
 }
 
-const CardFront = ({ props }) => {
+const CardFront = () => {
     const { cardCredit } = useCardCreditContext();
     const { cardNumber: number, cardName: name, monthyValid, yearValid } = cardCredit;
     
-    const validMonthy = monthyValid || '00';
-    const validYear = yearValid || '00';
+    const validMonthy = monthyValid['value'] || '00';
+    const validYear = yearValid['value'] || '00';
 
     const valid = `${validMonthy}/${validYear}`;
 
@@ -30,9 +30,9 @@ const CardFront = ({ props }) => {
           <div className={infosContanierClasses}>
             <Icon name="CardLogo" />
             <div className="text-white sm:mt-6 lg:mt-12">
-                <span className="block lg:text-[32px]">{number || mockCredit['number']}</span>
+                <span className="block lg:text-[32px]">{number['value'] || mockCredit['number']}</span>
                 <div className="flex justify-between sm:mt-2">
-                    <span className="block sm:text-xs lg:text-lg">{name.toUpperCase() || mockCredit['name'].toUpperCase() }</span>
+                    <span className="block sm:text-xs lg:text-lg">{name['value'].toUpperCase() || mockCredit['name'].toUpperCase() }</span>
                     <span className="block sm:text-xs lg:text-lg ml-3">{valid || mockCredit['valid']}</span>
                 </div>
                 </div>

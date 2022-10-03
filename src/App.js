@@ -1,28 +1,18 @@
-import { useState } from 'react';
 import { SectionCardCredit, SectionSucess, SectionForm } from './modules/Sections'
-import { CardCreditContext } from './context'
+import { CardCreditContext, useCardCredit } from './context'
 
 function App() {
-  const [sucess, setSucess] = useState(false);
-  const [cardCredit, setCardCredit] = useState(() => ({ 
-    cardName: '',
-    cardNumber: '',
-    monthyValid: '',
-    yearValid: '',
-    cvc: ''
-  }));
+  const { sucess, ...state } = useCardCredit();
 
   return (
     <CardCreditContext.Provider value={{ 
-      sucess, 
-      setSucess,
-      cardCredit,
-      setCardCredit
+      sucess,
+      ...state
       }}>
       <div className="lg:flex sm:block">
         <SectionCardCredit />
         <SectionSucess />
-        {!sucess && <SectionForm onSubmit={(e) => { setSucess(true) }} />}
+        {!sucess && <SectionForm />}
         </div>
       </CardCreditContext.Provider>
   );
